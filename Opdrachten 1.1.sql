@@ -110,7 +110,7 @@ AND e.HIREDATE >  STR_TO_DATE('1981-05-31', '%Y-%m-%d')
 /**
 1.13. Specificeereenbreakperdepartement,enlaat1legelijnalsdewaardevoordepartementverandert.Druk
 deptno, naam van de werknemer, job en het loon (2 decimalen) af. Sorteer binnen elk departement op
-dalend loon.
+dalend loon. Text bklablablabla
 **/
 
 
