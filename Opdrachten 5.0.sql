@@ -1,0 +1,41 @@
+-- 5.1. Schrijf een commandfile die volgende informatie op het scherm toont:
+-- Vraag per klant zijn kredietlimiet en alle bestellingen met het totaalbedrag van elke bestelling. Sorteer op dalende kredietlimiet en daarbinnen op stijgende klantennummer. Druk deze informatie af per kredietlimiet en per klant, laat een lege lijn bij het veranderen van kredietlimiet en bereken het gemiddelde bedrag per bestelling. Voeg als koptekst toe: 'Gemiddelde bedragen per klant per bestelling' en als voettekst het paginanummer. Centreer beide titels.
+
+-- 5.2. Schrijf een hiërarchische query die via indentering het organigram van het bedrijf toont. Selecteer het personeelsnummer, de naam en de job. De kolomtitels zijn Naam en Job.
+
+-- select substr (lpad(' ',(level-1)*2) || empno,0,15) || '' from emp
+-- start with job = 'PRESIDENT'
+-- connect by prior empno=mgr;
+
+-- 5.3 Vraag gemiddeld salaris, minimum salaris, maximum salaris per departement op, samen met de naam, het nummer en de lokatie van het departement.
+-- 5.4 Stel een lijst op van de werknemers en de klanten. In de eerste kolom komt de naam van de persoon, in de tweede de naam van het departement:
+-- naam van het departement van de werknemer voor een werknemer
+-- naam van het departement van de verkoper voor de klanten.
+-- In de derde kolom komt een E voor werknemers en een C voor de klanten. Rangschik alfabetisch per naam.
+-- 5.5 Geef per departement de naam van het departement, de naam van de werknemer in dat departement die het meeste verdient, het salaris van deze persoon, het salaris van zijn
+-- chef en het nummer van het departement voluit uitgeschreven.
+-- 5.6 Schrijf de volgende query zonder een view te moeten gebruiken: SELECT AVG(avg_sal), AVG(min_sal), AVG(max_sal)
+-- FROM emp_group_by_deptno;
+-- Deze query maakt gebruik van de view: CREATE VIEW emp_group_by_deptno
+-- AS SELECT deptno, AVG(SAL) avg_sal, MIN(SAL) min_sal, MAX(sal) max_sal
+-- FROM emp GROUP BY deptno;
+-- 5.7 a. Zorg er voor dat de handelingen die nu komen, nog teniet kunnen gedaan worden. Zorg hierbij dat de veranderingen die voordien aan de tabel gebeurd zijn, ook nog eventueel kunnen teniet gedaan worden. b.Voeg in elk departement nieuwe employees toe waarvan de naam gelijk is aan een naam van een reeds bestaande werknemer. Schrijf eerst een constraint die er voor zorgt dat geen twee personeelsleden met dezelfde naam onder dezelfde chef vallen.
+-- 5.8 Voeg in een departement een nieuwe werknemer toe met een nieuwe chef. Deze chef heeft dezelfde naam als een reeds bestaande chef.
+-- 5.9 Tel in deze tabel het verschil tussen het aantal mensen dat niet in departement 30 werkt en het aantal mensen dat wel in dat departement werkt. Gebruik de kolom ename om dit verschil te tellen.
+-- 5.10 Tel hierna het verschil tussen het aantal namen van mensen die niet in departement 30 werken en het aantal namen van mensen die wel in dat departement werken. Gebruik de kolom ename om dit verschil te tellen.
+-- 5.11 Tel het aantal managers min het aantal namen van managers en verifieer of dit getal gelijk is aan 1.
+-- 5.12 Doe al de handelingen vanaf oef7a teniet.Maak een kopij van de emp tabel (emp1) (zonder constraints) en zorg er voor dat deze tabel fouten zou leveren tov de constraints die nu op de emptabel gedefinieerd zijn:
+-- - voeg een werknemer toe waarvan de manager niet bestaat
+-- - voeg een werknemer toe die in een verkeerd departement werkt
+-- - voeg een verkeerde hiredate in
+-- - zorg voor een dubbele key-waarde Voeg in de dictionary commentaar toe.
+-- © RealDolmen Education
+-- - 10
+-- Definieer nu dezelfde constraints als voor de emp-tabel, maar verwijs naar de (nog niet gecreëerde dept1- tabel) .Lukt dit? Doe de nodige aanpassingen, maar zorg dat de constraint gedefinieerd is vooraleer de rijen van dept gevuld zijn.
+-- Zorg dat de exceptions opgevangen worden in een tabel.
+-- Vul de rijen van dept en zorg dat de referentiële constraint nu nagekeken wordt. Laat u leiden door de exceptions tabel.
+-- Probeer de tabel DEPT1 te wissen, zonder uitdrukkelijk de tabel EMP1 te wissen. Probeer verschillende mogelijkheden uit. (Hercreëer eventueel de tabellen)
+-- Kijk naar de view USER_CONSTRAINTS.
+-- 5.13 Geef het departementsnummer, de departementsnaam en het aantal werknemers van het departement met het meeste aantal werknemers.
+-- 5.14 Lijst alle werknemers uit wiens naam met dezelfde letter begint als werknemer met nummer 7934, zonder hem zelf af te lijsten.
+-- 5.15 Geef een lijst van al de 'SALESMAN' die nog geen klanten hebben.
